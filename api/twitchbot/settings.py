@@ -111,9 +111,8 @@ TWITCH_BOT_CHANNEL = "twitch_bot_x"
 TWITCH_CLIENT_ID = os.environ.get("TWITCH_CLIENT_ID")
 TWITCH_CLIENT_SECRET = os.environ.get("TWITCH_CLIENT_SECRET")
 TWITCH_SERVER_URL = "https://id.twitch.tv/oauth2/token"
-#OPENAI_API_KEY = "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"
-OPENAI_API_KEY = "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"
-TWITCH_ACCESS_TOKEN= "wo86wa2foioazwu96izewvueyuhs8v"
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+TWITCH_ACCESS_TOKEN= os.environ.get("TWITCH_ACCESS_TOKEN")
 
 STATIC_URL = 'static/'
 
