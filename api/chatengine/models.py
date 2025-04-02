@@ -15,6 +15,19 @@ class ChatBot(models.Model):
 
     def __str__(self):
         return f"{self.nickname} ({self.twitch_channel})"
+    
+class ChatUser(models.Model):
+    chatbot = models.ForeignKey(ChatBot, on_delete=models.CASCADE)
+    platform = models.CharField(max_length=200)
+    username = models.CharField(max_length=200)
+    callname = models.CharField(max_length=200, blank=True, null=True) 
+    current_score = models.IntegerField(default=1000)
+
+    def __str__(self):
+        return f"{self.platform} ({self.username})"
+    
+    class Meta:
+        unique_together = ('chatbot', 'platform', 'username')
 
 
 class SimpleCommands(models.Model):
